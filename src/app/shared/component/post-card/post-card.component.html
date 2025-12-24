@@ -1,0 +1,17 @@
+<mat-card>
+    <mat-card-title>
+        {{postObj.title}}
+    </mat-card-title>
+    <mat-card-content>
+        {{postObj.body}}
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions class="d-flex justify-content-between">
+        <button
+        (click)="onEdit(postObj)"
+        mat-raised-button color="primary">Edit</button>
+        <button
+        (click)="onRemove(postObj)"
+        mat-raised-button color="warn">Remove</button>
+    </mat-card-actions>
+</mat-card>
