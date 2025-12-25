@@ -1,0 +1,36 @@
+
+.content{
+    height: 150px;
+    overflow: hidden;
+}
+.card{
+    overflow: hidden;
+}
+.card-body .content{
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.content img{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.content p{
+    position: absolute;
+    height: 70%;
+    z-index: 10;
+    top:30%;
+    padding:10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color:white;
+    overflow-y: auto;
+    transform: translateY(120%);
+    transition: all 0.5s linear;
+}
+.card-body:hover .content p{
+    transform: translateY(0);
+} 
+

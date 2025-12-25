@@ -9,6 +9,11 @@ import { PostFormComponent } from './shared/component/post-form/post-form.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './shared/material/material.module';
 import { FormsModule } from '@angular/forms';
+import { PostModule } from './shared/posts/app-posts.module';
+import { PageNotFoundComponent } from './shared/component/page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './shared/component/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +21,19 @@ import { FormsModule } from '@angular/forms';
     PostDashboardComponent,
     PostCardComponent,
     GetConfirmComponent,
-    PostFormComponent
+    PostFormComponent,
+    PageNotFoundComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    PostModule,
+    AppRoutingModule,
+    RouterOutlet,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

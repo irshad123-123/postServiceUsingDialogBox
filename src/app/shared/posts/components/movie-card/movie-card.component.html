@@ -1,0 +1,27 @@
+
+            <div class="card m-0">
+                <div class="card-header m-0 d-flex justify-content-between align-items-center">
+                    <strong>{{movieObj.name}}</strong>
+                    <small class="badge text-white"
+                    [ngClass]="{
+                        'bg-success' : +movieObj.rating >= 4,
+                        'bg-warning' : +movieObj.rating ==3,
+                        'bg-danger' : +movieObj.rating <= 2
+                    }"
+                    >{{movieObj.rating}}</small>
+                </div>
+                <div class="card-body m-0 p-1">
+                    <figure class="content">
+                        <img [src]="movieObj.imgUrl" [title]="movieObj.name" [alt]="movieObj.name">
+                        <p>{{movieObj.description}}</p>
+                    </figure>
+                </div>
+                <div class="card-footer m-0 d-flex justify-content-between align-items-center">
+                    <button
+                    (click)="onEdit()"
+                    mat-raised-button color="primary">Edit</button>
+                    <button
+                    (click)="onRemove()"
+                    mat-raised-button color="warn">Remove</button>
+                </div>
+            </div>

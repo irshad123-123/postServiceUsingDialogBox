@@ -1,0 +1,32 @@
+<form #formRef="ngForm" (ngSubmit)="onAddMovie()">
+    <div class="form-group">
+        <label for="movieName">Movie Name</label>
+        <input class="form-control" id="movieName" required ngModel name="name">
+    </div>
+    <div class="form-group">
+        <label for="movieImg">Image Url</label>
+        <input class="form-control" id="movieImg" required ngModel name="imgUrl">
+    </div>
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <select ngModel name="rating" required class="form-control" id="rating">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="movieDesc">Movie Description</label>
+        <textarea class="form-control" id="movieDesc" required ngModel name="description">
+                </textarea>
+    </div>
+    <div class="d-flex justify-content-between">
+        <button *ngIf="!isEditMode" type="submit" mat-raised-button color="primary">Add Movie</button>
+        <button
+        (click)="onUpdate()"
+        *ngIf="isEditMode" type="button" mat-raised-button color="primary">Update Movie</button>
+        <button (click)="onClose()" type="button" mat-raised-button color="warn">close</button>
+    </div>
+</form>
